@@ -5,11 +5,11 @@ import Image from "next/image";
  
  export default function Header() {
      return(
-         <div className="flex h-25 items-center border-b pt-10 pb-2">
-             <div className="mr-80">
-                 <h1>Logo</h1>
+         <div className="flex h-25 items-center pt-8 pb-2">
+             <div className="mr-45">
+                 <h1 className="font-poppins font-semibold text-[30px]">Exclusive</h1>
              </div>
-             <div className="flex gap-[48px] mr-95">
+             <div className="flex gap-[48px] mr-25">
                  <button className="relative group">
                      <span className="relative z-10">Home</span>
                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -31,9 +31,9 @@ import Image from "next/image";
                  <div>
                      <SearchBar />
                  </div>
-                 <div className="flex gap-[7px]">
-                     <Image className="w-8 h-8" src={iconHeart} />
-                     <Image className="w-8 h-8" src={iconCarrinho} />
+                 <div className="flex ">
+                     <Image className="w-6 h-6" src={iconHeart} />
+                     <Image className="w-6 h-6" src={iconCarrinho} />
                  </div>
              </div>
          </div>

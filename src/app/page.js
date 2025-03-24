@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Header from "./components/Header/Header";
+// import Carrossel from "./components/Carrossel/Carrossel";
 import Card from "./components/Card/Card";
 import Button from "./components/Button/Button";
 import Clock from "./components/Clock/Clock";
@@ -10,25 +11,36 @@ import CtgCard from "./components/CtgCard/CtgCard";
 import iconBigImage from "../app/assets/img/big_image.png";
 import imgControle from '../app/assets/img/controle.png';
 import iconCelular from '../app/assets/img/Category-CellPhone.png';
+import iconSeta from '../app/assets/img/seta.png';
 
 export default function Home() {
   return (
-    <div className="pl-39 pr-39 bg-gray-300">
-      <Header />
-      <div className="flex">
-        <div className="flex flex-col pt-12 pr-20 pl-15 border-r">
+    <div className="relative pl-65 pr-65 bg-gray-300">
 
+      {/* Header Section */}
+      <Header />
+      <div className="absolute top-24.5 left-0 w-full border-b-1 border-gray-500"></div>
+
+
+
+      {/* Hero Section */}
+
+      {/* Categories & Banner Section */}
+      <div className="flex">
+        <div className="flex flex-col pt-12 pr-5 border-r">
           {/* tentar adicionar um gap em vez do margin */}
           <nav>
             <ul> 
               <li className="mb-5.5">
-                <Link href="">
+                <Link className="flex gap-12" href="">
                   <p>Woman's Fashion</p>
+                  <Image src={iconSeta} alt='seta' />
                 </Link>
               </li>
               <li className="mb-5.5">
-                <Link href="">
+                <Link className="flex gap-19" href="">
                   <p>Man's Fashion</p>
+                  <Image src={iconSeta} alt='seta' />
                 </Link>
               </li>
               <li className="mb-5.5">
@@ -48,7 +60,7 @@ export default function Home() {
               </li>
               <li className="mb-5.5">
                 <Link href="">
-                  <p>Babay's & Toys</p>
+                  <p>Baby's & Toys</p>
                 </Link>
               </li>
               <li className="mb-5.5">
@@ -68,6 +80,10 @@ export default function Home() {
           <Image src={iconBigImage} />
         </div>
       </div>
+
+
+
+      {/* Flash Sales Section */}
       <div className="mt-50 flex flex-col gap-5 mb-15">
         <div className="flex gap-3 items-center">
           <div className="w-5 h-9 bg-red-500 rounded-[5px]"></div>
@@ -102,11 +118,18 @@ export default function Home() {
               Imagem
             </div>
           </div>
-          <div>
+          <div className="flex">
+            <CtgCard icon={iconCelular} nome="okoko" />
+            <CtgCard icon={iconCelular} nome="okoko" />
             <CtgCard icon={iconCelular} nome="okoko" />
           </div>
         </div>
       </div>
+
+      teste
+      testes
+      testestest
+      {/* <Carrossel images={imgControle} /> */}
 
       {/* <div className="flex gap-3 items-center">
         <div className="w-5 h-9 bg-red-500 rounded-[5px]"></div>
