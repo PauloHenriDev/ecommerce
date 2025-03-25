@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Header from "./components/Header/Header";
-// import Carrossel from "./components/Carrossel/Carrossel";
+import Carrossel from "./components/Carrossel/Carrossel";
 import Card from "./components/Card/Card";
 import Button from "./components/Button/Button";
 import Clock from "./components/Clock/Clock";
@@ -12,6 +12,7 @@ import iconBigImage from "../app/assets/img/big_image.png";
 import imgControle from '../app/assets/img/controle.png';
 import iconCelular from '../app/assets/img/Category-CellPhone.png';
 import iconSeta from '../app/assets/img/seta.png';
+import red from '../app/assets/img/bg-vermelho.jpg';
 
 export default function Home() {
   return (
@@ -19,15 +20,19 @@ export default function Home() {
 
       {/* Header Section */}
       <Header />
-      <div className="absolute top-24.5 left-0 w-full border-b-1 border-gray-500"></div>
+      {/* Linha */}
+      <div className="absolute top-24.5 left-0 w-full border-b border-gray-500"></div>
 
 
 
       {/* Hero Section */}
 
       {/* Categories & Banner Section */}
-      <div className="flex">
-        <div className="flex flex-col pt-12 pr-5 border-r">
+      <div className="flex relative">
+        {/* Linha */}
+        <div className="absolute top-0 left-58 h-[calc(100%)] w-[1px] bg-gray-500"></div>
+
+        <div className="flex flex-col pt-12 pr-5">
           {/* tentar adicionar um gap em vez do margin */}
           <nav>
             <ul> 
@@ -76,8 +81,8 @@ export default function Home() {
             </ul>
           </nav>
         </div>
-        <div className="ml-12 mt-12">
-          <Image src={iconBigImage} />
+        <div className="ml-12 mt-8">
+          <Carrossel />
         </div>
       </div>
 
@@ -99,13 +104,20 @@ export default function Home() {
             </div>
           </div>
           <div className="flex gap-5">
-            <Card className="" img={imgControle} nome="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="5" />
+            <Card className="" img={red} nome="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="5" />
             <Card className="" img={imgControle} nome="AK-900 Wired Keyboard" valor="R$1160,00" estrelas="5" />
             <Card className="" img={imgControle} nome="IPS LCD Gaming Monitor" valor="R$370,00" valorAntigo="R$400,00" estrelas="5" />
           </div>
-          <Button nome="Ver Todos Os Produtos" largura="300px" altura="40px" />
+          <div className="flex mt-12 justify-center">
+            <Button nome="Ver Todos Os Produtos" largura="220px" altura="50px" />
+          </div>
+          <div className="absolute top-320.5 left-65 w-320 border-b border-gray-500"></div>          
         </div>
       </div>
+
+
+
+      {/* Categories Section */}
       <div className="flex flex-col gap-5">
         <div className="flex gap-3 items-center">
           <div className="w-5 h-9 bg-red-500 rounded-[5px]"></div>
