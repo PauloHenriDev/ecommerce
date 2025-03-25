@@ -7,7 +7,7 @@ export default function Card({ img, nome, valor, valorAntigo, estrelas }) {
                 {img && <img src={img} alt="Imagem do produto" width={215} height={200} />}
 
                 {/* Ícones que aparecem ao passar o mouse */}
-                <div className="absolute inset-0 flex opacity-0 group-hover:opacity-100">
+                <div className="absolute left-42 top-2 flex opacity-0 group-hover:opacity-100">
                     <div className="flex flex-col gap-4">
                         {/* Substitua as imagens pelos ícones depois */}
                         <div className="bg-gray-500 p-2 rounded-full">

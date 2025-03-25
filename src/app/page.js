@@ -10,6 +10,7 @@ import CtgCard from "./components/CtgCard/CtgCard";
 
 import iconBigImage from "../app/assets/img/big_image.png";
 import imgControle from '../app/assets/img/controle.png';
+import imgCont from '../../src/app/assets/img/controle-2.jpg';
 import iconCelular from '../app/assets/img/Category-CellPhone.png';
 import iconSeta from '../app/assets/img/seta.png';
 import red from '../app/assets/img/bg-vermelho.jpg';
@@ -104,13 +105,15 @@ export default function Home() {
             </div>
           </div>
           <div className="flex gap-5">
-            <Card className="" img={red} nome="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="5" />
-            <Card className="" img={imgControle} nome="AK-900 Wired Keyboard" valor="R$1160,00" estrelas="5" />
+            <Card className="" img={imgCont} nome="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="5" />
+            <Card className="" img={red} nome="AK-900 Wired Keyboard" valor="R$1160,00" estrelas="5" />
             <Card className="" img={imgControle} nome="IPS LCD Gaming Monitor" valor="R$370,00" valorAntigo="R$400,00" estrelas="5" />
           </div>
-          <div className="flex mt-12 justify-center">
+          <div className="flex mt-12 justify-center mb-20">
             <Button nome="Ver Todos Os Produtos" largura="220px" altura="50px" />
           </div>
+
+          {/* Linha */}
           <div className="absolute top-320.5 left-65 w-320 border-b border-gray-500"></div>          
         </div>
       </div>
