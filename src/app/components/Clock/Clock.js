@@ -1,56 +1,30 @@
-// export default function Clock() {
-//     let hours = 12;
-//     let minutes = 0;
-//     let seconds = 0;
-
-//     const interval = setInterval(() => {
-//         console.log(`${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`);
-
-//         if (hours === 0 && minutes === 0 && seconds === 0) {
-//             clearInterval(interval);
-//             console.log("Tempo Esgotado!");
-//             return;
-//         }
-
-//         if (seconds === 0) {
-//             if (minutes === 0) {
-//                 if (hours >  0) {
-//                     hours--;
-//                     minutes = 59;
-//                     seconds = 59;
-//                 }
-//             } else {
-//                 minutes--;
-//                 seconds = 59;
-//             }
-//         } else {
-//             seconds--;
-//         }
-//     }, 1000);
-// }
-
 'use client'
 import { useEffect, useState } from "react";
 
 const CountdownTimer = () => {
-    const [time, setTime] = useState({ hours: 12, minutes: 0, seconds: 0 });
+    const [time, setTime] = useState({ days: 0, hours: 60, minutes: 0, seconds: 0 });
 
     useEffect(() => {
         const interval = setInterval(() => {
             setTime((prevTime) => {
-                let { hours, minutes, seconds } = prevTime;
+                let { days ,hours, minutes, seconds } = prevTime;
 
                 if (hours === 0 && minutes === 0 && seconds === 0) {
                     clearInterval(interval);
                     return prevTime;
                 }
-
                 if (seconds === 0) {
                     if (minutes === 0) {
-                        if (hours > 0) {
+                        if (hours === 0) {
+                            if (days > 0) {
+                                days--;
+                                hours = 59;
+                                minutes = 59;
+                                seconds = 59;
+                            }
+                        } else {
                             hours--;
                             minutes = 59;
-                            seconds = 59;
                         }
                     } else {
                         minutes--;
@@ -60,7 +34,7 @@ const CountdownTimer = () => {
                     seconds--;
                 }
 
-                return { hours, minutes, seconds };
+                return { days, hours, minutes, seconds };
             });
         }, 1000);
 
@@ -69,6 +43,7 @@ const CountdownTimer = () => {
 
     return (
         <div style={{ fontSize: "2rem", fontWeight: "bold" }}>
+            {String(time.days).padStart(2, "0")}:
             {String(time.hours).padStart(2, "0")}:
             {String(time.minutes).padStart(2, "0")}:
             {String(time.seconds).padStart(2, "0")}

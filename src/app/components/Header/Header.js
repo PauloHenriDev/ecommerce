@@ -6,10 +6,14 @@ import Image from "next/image";
  export default function Header() {
      return(
          <div className="flex h-25 items-center pt-8 pb-2">
-             <div className="mr-45">
+
+             <div className=" mr-5 md:mr-5 lg:mr-10 xl:mr-25">
                  <h1 className="font-poppins font-semibold text-[30px]">Exclusive</h1>
              </div>
-             <div className="flex gap-[48px] mr-25">
+
+
+
+             <div className="flex md:gap-8 lg:gap-16 xl:gap-[48px] mr-4 md:mr-8 lg:mr-12 xl:mr-25">
                  <button className="relative group">
                      <span className="relative z-10">Home</span>
                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -27,6 +31,8 @@ import Image from "next/image";
                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
                  </button>
              </div>
+
+
              <div className="flex gap-[24px] items-center">
                  <div>
                      <SearchBar />

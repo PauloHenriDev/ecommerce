@@ -22,7 +22,7 @@
                  value={query} 
                  onChange={handleImputChange} 
                  placeholder='Pesquisar...' 
-                 className='bg-[#F5F5F5] pt-2 pb-2 pr-5 pl-5 w-70 rounded-[5px]' 
+                 className='bg-[#F5F5F5] pt-2 pb-2 pr-5 pl-5 md:max-w-[30] lg:max-w-[30] rounded-[5px]' 
              />
              <Image className='absolute bottom-2.5 right-4' src={Lupa} alt='lupa' width={20} height={20} />
          </form>
