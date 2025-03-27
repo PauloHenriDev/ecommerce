@@ -17,13 +17,13 @@ export default function Carrossel() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3500); // Troca de imagem a cada 3.5 segundos
+    }, 5500); // Troca de imagem a cada 3.5 segundos
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative w-[860px] h-[360px] mx-auto overflow-hidden rounded-lg shadow-lg">
+    <div className="relative w-[892px] h-[344px] md:max-w-[250px] lg:max-w-[750px] xl:max-w-[892px] mx-auto overflow-hidden rounded-lg shadow-lg">
       <div className="relative w-full h-full">
         {images.map((src, index) => (
           <div
