@@ -102,14 +102,31 @@ export default function Home() {
               <p className="text-red-500">Today's</p>
             </div>
 
-            <div className="">
+            <div>
+
               <div className="flex">
+                <p className="text-[12px] ml-[305px]">Days</p>
+                <p className="text-[12px] ml-[55px]">Hours</p>
+                <p className="text-[12px] ml-[47px]">Minutes</p>
+                <p className="text-[12px] ml-[38px]">Seconds</p>
+              </div>
+
+              <div className="flex">
+
                 <div className="mr-24">
                   <h2 className="font-poppins font-semibold text-[36px] mb-5">Flash Sales</h2>
                 </div>
-                <div>
+
+                <div className="mr-[12px]">
                   <Clock />
                 </div>
+
+                <div className="">
+                  <button className="cursor-pointer">
+                    <Image src={iconSeta} alt='seta' />
+                  </button>
+                </div>
+
               </div>
 
               <div className="flex gap-5">

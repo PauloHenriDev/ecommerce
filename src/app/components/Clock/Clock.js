@@ -2,14 +2,14 @@
 import { useEffect, useState } from "react";
 
 const CountdownTimer = () => {
-    const [time, setTime] = useState({ days: 0, hours: 60, minutes: 0, seconds: 0 });
+    const [time, setTime] = useState({ days: 5, hours: 0, minutes: 0, seconds: 0 });
 
     useEffect(() => {
         const interval = setInterval(() => {
             setTime((prevTime) => {
-                let { days ,hours, minutes, seconds } = prevTime;
+                let { days, hours, minutes, seconds } = prevTime;
 
-                if (hours === 0 && minutes === 0 && seconds === 0) {
+                if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
                     clearInterval(interval);
                     return prevTime;
                 }
@@ -18,13 +18,14 @@ const CountdownTimer = () => {
                         if (hours === 0) {
                             if (days > 0) {
                                 days--;
-                                hours = 59;
+                                hours = 23;
                                 minutes = 59;
                                 seconds = 59;
                             }
                         } else {
                             hours--;
                             minutes = 59;
+                            seconds = 59;
                         }
                     } else {
                         minutes--;
@@ -42,11 +43,14 @@ const CountdownTimer = () => {
     }, []);
 
     return (
-        <div style={{ fontSize: "2rem", fontWeight: "bold" }}>
-            {String(time.days).padStart(2, "0")}:
-            {String(time.hours).padStart(2, "0")}:
-            {String(time.minutes).padStart(2, "0")}:
-            {String(time.seconds).padStart(2, "0")}
+        <div className="flex text-[32px] font-poppins font-semibold">
+            <span className="pr-[17px]">{String(time.days).padStart(2, "0")}</span>
+            <span className="text-gray-500">:</span>
+            <span className="px-[17px]">{String(time.hours).padStart(2, "0")}</span>
+            <span className="text-gray-500">:</span>
+            <span className="px-[17px]">{String(time.minutes).padStart(2, "0")}</span>
+            <span className="text-gray-500">:</span>
+            <span className="pl-[17px]">{String(time.seconds).padStart(2, "0")}</span>
         </div>
     );
 };
