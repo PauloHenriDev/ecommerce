@@ -37,17 +37,12 @@ const handleScroll = (direction) => {
 
   return (
     <div className="flex justify-center bg-gray-300">
-        <div className="
-          max-w-[100%] 
-          md:max-w-[40%] 
-          lg:max-w-[90%] 
-          mx-auto
-        ">
+        <div className="max-w-[100%] md:max-w-[40%] lg:max-w-[90%] mx-auto">
 
           {/* Header Section */}
           <Header />
           {/* Linha */}
-          <div className="absolute top-24.5 left-0 w-full border-b border-gray-500"></div>
+          <div className="absolute top-30 left-0 w-full border-b border-gray-500"></div>
 
 
           {/* Hero Section */}
@@ -56,7 +51,7 @@ const handleScroll = (direction) => {
             {/* Categories & Banner Section */}
 
             {/* Linha */}
-            <div className="absolute top-0 left-58 h-[calc(100%)] w-[1px] bg-gray-500"></div>
+            <div className="absolute top-[9px] left-58 h-[calc(100%)] w-[1px] bg-gray-500"></div>
 
             <div className="flex flex-col pt-12 pr-5">
 
@@ -107,7 +102,7 @@ const handleScroll = (direction) => {
                 </ul>
               </nav>
             </div>
-            <div className="ml-12 mt-8">
+            <div className="ml-12 mt-[45px]">
               <Carrossel />
             </div>
           </div>
@@ -116,7 +111,7 @@ const handleScroll = (direction) => {
           <div className="mt-50 flex flex-col gap-5 mb-15">
             {/* Flash Sales Section */}
 
-            <ColorTextSection text="Today's" />
+            <ColorTextSection texto="Today's" />
 
             <div>
 
@@ -130,7 +125,7 @@ const handleScroll = (direction) => {
               <div className="flex">
 
                 <div className="mr-[87px] mb-[31px]">
-                  <TitleSection text="Flash Sales" />
+                  <TitleSection texto="Flash Sales" />
                 </div>
 
                 <div className="mr-[500px]">
@@ -146,50 +141,75 @@ const handleScroll = (direction) => {
               <div ref={scrollRef} className="flex gap-[30px] overflow-hidden scroll-smooth whitespace-nowrap w-[calc(5*215px+4*30px)]">
                 {/* Carrossel de Produtos */}
 
-                <Card img={red} nome="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="★★★★★" reviews="(88)" />
-                <Card img={red} nome="AK-900 Wired Keyboard" valor="R$960,00" valorAntigo="1160,00" estrelas="★★★★" reviews="75" />
-                <Card img={imgControle} nome="IPS LCD Gaming Monitor" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★★" reviews="(99)" />
-                <Card img={imgControle} nome="S-Series Comfort Chair" valor="R$375,00" valorAntigo="R$400,00" estrelas="★★★★" reviews="(99)" />
-                <Card img={imgControle} nome="Ichigo" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★" reviews="(15)" />
-                <Card img={imgControle} nome="Rukia" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★" reviews="(15)" />
-                <Card img={imgControle} nome="Orihime" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★" reviews="(15)" />
-                <Card img={imgControle} nome="Chad" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★" reviews="(15)" />
+                <Card img={red} texto="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="★★★★★" reviews="(88)" />
+                <Card img={red} texto="AK-900 Wired Keyboard" valor="R$960,00" valorAntigo="1160,00" estrelas="★★★★" reviews="75" />
+                <Card img={imgControle} texto="IPS LCD Gaming Monitor" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★★" reviews="(99)" />
+                <Card img={imgControle} texto="S-Series Comfort Chair" valor="R$375,00" valorAntigo="R$400,00" estrelas="★★★★" reviews="(99)" />
+                <Card img={imgControle} texto="Ichigo" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★" reviews="(15)" />
+                <Card img={imgControle} texto="Rukia" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★" reviews="(15)" />
+                <Card img={imgControle} texto="Orihime" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★" reviews="(15)" />
+                <Card img={imgControle} texto="Chad" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★" reviews="(15)" />
               </div>
 
               <div className="flex mt-12 justify-center mb-[140px]">
-                <Button nome="Ver Todos Os Produtos" largura="220px" altura="50px" />
+                <Button texto="Ver Todos Os Produtos" largura="220px" altura="50px" />
               </div>
 
               {/* Linha */}
-              <div className="absolute top-320.5 left-65 w-320 border-b border-gray-500"></div>
+              <div className="absolute top-[1320px] left-65 w-320 border-b border-gray-500"></div>
 
             </div>
-
 
           </div>
 
 
-          <ColorTextSection text="Categories" />
-          <div>
-            <div className="flex mt-[20px] mb-[31px]">
-              <TitleSection text="Browse By Categories" />
-              <div className="ml-[691px]">
+          <div className="mb-[140px]">
+            {/* Categories Section */}
+            <ColorTextSection texto="Categories" />
+
+            <div className="flex mt-[20px] mb-[31px] justify-between">
+              <TitleSection texto="Browse By Categories" />
+              <div>
                 <ArrowButton />
               </div>
             </div>
             <div className="flex gap-[30px]">
-              <CtgCard icon={iconCelular} nome="Phones" />
-              <CtgCard icon={iconCelular} nome="Computers" />
-              <CtgCard icon={iconCelular} nome="SmartWatch" />
-              <CtgCard icon={iconCelular} nome="Camera" />
-              <CtgCard icon={iconCelular} nome="HeadPhones" />
-              <CtgCard icon={iconCelular} nome="Gaming" />
+              <CtgCard icon={iconCelular} texto="Phones" />
+              <CtgCard icon={iconCelular} texto="Computers" />
+              <CtgCard icon={iconCelular} texto="SmartWatch" />
+              <CtgCard icon={iconCelular} texto="Camera" />
+              <CtgCard icon={iconCelular} texto="HeadPhones" />
+              <CtgCard icon={iconCelular} texto="Gaming" />
             </div>
           </div>
+          {/* Linha */}
+          <div className="absolute top-[1800px] left-65 w-320 border-b border-gray-500"></div>
+
+
+
+          <div>
+            <ColorTextSection texto="This Month" />
+            <div className="mt-[20px] flex justify-between">
+              <TitleSection texto="Best Selling Products" />
+              <Button texto="Ver Tudo" largura="159px" altura="56px" />
+            </div>
+            <div className="flex gap-[30px] overflow-hidden scroll-smooth whitespace-nowrap w-[calc(5*215px+4*30px)]">
+              <Card img="red" texto="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="★★★★★" reviews="(88)" />
+              <Card img="red" texto="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="★★★★★" reviews="(88)" />
+              <Card img="red" texto="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="★★★★★" reviews="(88)" />
+              <Card img="red" texto="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="★★★★★" reviews="(88)" />
+              <Card img="red" texto="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="★★★★★" reviews="(88)" />
+              <Card img="red" texto="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="★★★★★" reviews="(88)" />
+              <Card img="red" texto="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="★★★★★" reviews="(88)" />
+              <Card img="red" texto="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="★★★★★" reviews="(88)" />
+              <Card img="red" texto="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="★★★★★" reviews="(88)" />
+            </div>
+          </div>
+
+
+          {/* Body */}
         </div>
-
-    
-
+          {/* Function */}
     </div>
   );
 }

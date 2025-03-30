@@ -1,4 +1,4 @@
-export default function Card({ img, nome, valor, valorAntigo, estrelas, reviews }) {
+export default function Card({ img, texto, valor, valorAntigo, estrelas, reviews }) {
     return (
         <div className="flex flex-col w-fit h-fit gap-4 cursor-pointer">
             {/* Apliquei a classe 'group' aqui no contêiner da imagem */}
@@ -28,7 +28,7 @@ export default function Card({ img, nome, valor, valorAntigo, estrelas, reviews 
 
             {/* Card Informations */}
             <div className="flex flex-col gap-1 text-[16px]">
-                <p>{nome}</p>
+                <p>{texto}</p>
                 <div className="flex gap-3">
                     <p className="text-green-800">{valor}</p>
                     <p className="text-red-800 line-through">{valorAntigo}</p>

@@ -1,4 +1,4 @@
-export default function Button({ nome, largura, altura }) {
+export default function Button({ texto, largura, altura }) {
     return(
         <div>
             <button 
@@ -9,7 +9,7 @@ export default function Button({ nome, largura, altura }) {
                     height: altura,
                 }}
             >
-                <p className="text-white">{nome}</p>
+                <p className="text-white">{texto}</p>
             </button>
         </div>
     )
