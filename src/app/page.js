@@ -16,7 +16,7 @@ import ArrowButton from "./components/ArrowButton/ArrowButton";
 
 import iconBigImage from "../app/assets/img/big_image.png";
 import imgControle from '../app/assets/img/controle.png';
-import iconCelular from '../app/assets/img/Category-CellPhone.png';
+import iconCelular from '../app/assets/img/Category-CellPhone.jpg';
 import iconSeta from '../app/assets/img/seta.png';
 import red from '../app/assets/img/bg-vermelho.jpg';
 
@@ -45,17 +45,16 @@ const handleScroll = (direction) => {
         ">
 
           {/* Header Section */}
-
           <Header />
-
           {/* Linha */}
           <div className="absolute top-24.5 left-0 w-full border-b border-gray-500"></div>
 
+
           {/* Hero Section */}
 
-          {/* Categories & Banner Section */}
-
           <div className="flex relative">
+            {/* Categories & Banner Section */}
+
             {/* Linha */}
             <div className="absolute top-0 left-58 h-[calc(100%)] w-[1px] bg-gray-500"></div>
 
@@ -114,12 +113,10 @@ const handleScroll = (direction) => {
           </div>
 
 
-          {/* Flash Sales Section */}
           <div className="mt-50 flex flex-col gap-5 mb-15">
-            
+            {/* Flash Sales Section */}
+
             <ColorTextSection text="Today's" />
-            {/* <div className="w-5 h-9 bg-red-500 rounded-[5px]"></div>
-            <p className="text-red-500">Today's</p> */}
 
             <div>
 
@@ -134,7 +131,6 @@ const handleScroll = (direction) => {
 
                 <div className="mr-[87px] mb-[31px]">
                   <TitleSection text="Flash Sales" />
-                  {/* <h2 className="font-poppins font-semibold text-[36px] mb-5">Flash Sales</h2> */}
                 </div>
 
                 <div className="mr-[500px]">
@@ -147,8 +143,9 @@ const handleScroll = (direction) => {
 
               </div>
 
-              {/* Carrossel de Produtos */}
               <div ref={scrollRef} className="flex gap-[30px] overflow-hidden scroll-smooth whitespace-nowrap w-[calc(5*215px+4*30px)]">
+                {/* Carrossel de Produtos */}
+
                 <Card img={red} nome="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="★★★★★" reviews="(88)" />
                 <Card img={red} nome="AK-900 Wired Keyboard" valor="R$960,00" valorAntigo="1160,00" estrelas="★★★★" reviews="75" />
                 <Card img={imgControle} nome="IPS LCD Gaming Monitor" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★★" reviews="(99)" />
@@ -171,32 +168,26 @@ const handleScroll = (direction) => {
 
           </div>
 
-          <div className="flex flex-col gap-5">
-            <ColorTextSection text="Today's" />
-          {/* <div className="flex gap-3 items-center">
-            <div className="w-5 h-9 bg-red-500 rounded-[5px]"></div>
-            <p className="text-red-500">Categories</p>
-          </div> */}
+
+          <ColorTextSection text="Categories" />
           <div>
-            <div className="flex mb-[31px]">
+            <div className="flex mt-[20px] mb-[31px]">
               <TitleSection text="Browse By Categories" />
-              {/* <h2 className="font-poppins font-semibold text-[36px] mb-5">Browse By Categories</h2> */}
-              <div>
+              <div className="ml-[691px]">
                 <ArrowButton />
               </div>
             </div>
-            <div className="flex">
-              <CtgCard icon={iconCelular} nome="okoko" />
-              <CtgCard icon={iconCelular} nome="okoko" />
-              <CtgCard icon={iconCelular} nome="okoko" />
+            <div className="flex gap-[30px]">
+              <CtgCard icon={iconCelular} nome="Phones" />
+              <CtgCard icon={iconCelular} nome="Computers" />
+              <CtgCard icon={iconCelular} nome="SmartWatch" />
+              <CtgCard icon={iconCelular} nome="Camera" />
+              <CtgCard icon={iconCelular} nome="HeadPhones" />
+              <CtgCard icon={iconCelular} nome="Gaming" />
             </div>
           </div>
         </div>
 
-
-        </div>
-      {/* relative pl-65 pr-65 bg-gray-300 */}
-      {/* Header Section */}
     
 
     </div>
