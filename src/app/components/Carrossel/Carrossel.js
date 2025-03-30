@@ -7,9 +7,8 @@ import Image from "next/image";
 import imagemUm from "../../assets/img/bg-vermelho.jpg";
 import imagemDois from "../../assets/img/bg-blue.jpg";
 import imagemTres from "../../assets/img/green-bg.jpg";
-import imagemQuatro from "../../assets/img/controle.png";
 
-const images = [imagemUm, imagemDois, imagemTres, imagemQuatro];
+const images = [imagemUm, imagemDois, imagemTres];
 
 export default function Carrossel() {
   const [currentIndex, setCurrentIndex] = useState(0);

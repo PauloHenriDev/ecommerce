@@ -1,12 +1,18 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 
 import Header from "./components/Header/Header";
 import Carrossel from "./components/Carrossel/Carrossel";
+import ColorTextSection from "./components/ColorTextSection/ColorTextSection";
+import TitleSection from "./components/TitleSection/TitleSection";
 import Card from "./components/Card/Card";
 import Button from "./components/Button/Button";
 import Clock from "./components/Clock/Clock";
 import CtgCard from "./components/CtgCard/CtgCard";
+import ArrowButton from "./components/ArrowButton/ArrowButton";
 
 import iconBigImage from "../app/assets/img/big_image.png";
 import imgControle from '../app/assets/img/controle.png';
@@ -15,6 +21,20 @@ import iconSeta from '../app/assets/img/seta.png';
 import red from '../app/assets/img/bg-vermelho.jpg';
 
 export default function Home() {
+  const scrollRef = useRef(null);
+  const scrollAmount = 250;
+
+const handleScroll = (direction) => {
+  if (scrollRef.current) {
+    const container = scrollRef.current;
+    if (direction === "left") {
+      container.scrollLeft -= scrollAmount;
+    } else {
+      container.scrollLeft += scrollAmount;
+    }
+  }
+};
+
   return (
     <div className="flex justify-center bg-gray-300">
         <div className="
@@ -97,10 +117,9 @@ export default function Home() {
           {/* Flash Sales Section */}
           <div className="mt-50 flex flex-col gap-5 mb-15">
             
-            <div className="flex gap-3 items-center">
-              <div className="w-5 h-9 bg-red-500 rounded-[5px]"></div>
-              <p className="text-red-500">Today's</p>
-            </div>
+            <ColorTextSection text="Today's" />
+            {/* <div className="w-5 h-9 bg-red-500 rounded-[5px]"></div>
+            <p className="text-red-500">Today's</p> */}
 
             <div>
 
@@ -113,28 +132,34 @@ export default function Home() {
 
               <div className="flex">
 
-                <div className="mr-24">
-                  <h2 className="font-poppins font-semibold text-[36px] mb-5">Flash Sales</h2>
+                <div className="mr-[87px] mb-[31px]">
+                  <TitleSection text="Flash Sales" />
+                  {/* <h2 className="font-poppins font-semibold text-[36px] mb-5">Flash Sales</h2> */}
                 </div>
 
-                <div className="mr-[12px]">
+                <div className="mr-[500px]">
                   <Clock />
                 </div>
 
-                <div className="">
-                  <button className="cursor-pointer">
-                    <Image src={iconSeta} alt='seta' />
-                  </button>
+                <div>
+                  <ArrowButton handleScroll={handleScroll} />
                 </div>
 
               </div>
 
-              <div className="flex gap-5">
-                <Card className="" img={red} nome="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="5" />
-                <Card className="" img={red} nome="AK-900 Wired Keyboard" valor="R$1160,00" estrelas="★★★★" />
-                <Card className="" img={imgControle} nome="IPS LCD Gaming Monitor" valor="R$370,00" valorAntigo="R$400,00" estrelas="5" />
+              {/* Carrossel de Produtos */}
+              <div ref={scrollRef} className="flex gap-[30px] overflow-hidden scroll-smooth whitespace-nowrap w-[calc(5*215px+4*30px)]">
+                <Card img={red} nome="HAVIT HV-G92 Gamepad" valor="R$120,00" valorAntigo="R$160,00" estrelas="★★★★★" reviews="(88)" />
+                <Card img={red} nome="AK-900 Wired Keyboard" valor="R$960,00" valorAntigo="1160,00" estrelas="★★★★" reviews="75" />
+                <Card img={imgControle} nome="IPS LCD Gaming Monitor" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★★" reviews="(99)" />
+                <Card img={imgControle} nome="S-Series Comfort Chair" valor="R$375,00" valorAntigo="R$400,00" estrelas="★★★★" reviews="(99)" />
+                <Card img={imgControle} nome="Ichigo" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★" reviews="(15)" />
+                <Card img={imgControle} nome="Rukia" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★" reviews="(15)" />
+                <Card img={imgControle} nome="Orihime" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★" reviews="(15)" />
+                <Card img={imgControle} nome="Chad" valor="R$370,00" valorAntigo="R$400,00" estrelas="★★★★" reviews="(15)" />
               </div>
-              <div className="flex mt-12 justify-center mb-20">
+
+              <div className="flex mt-12 justify-center mb-[140px]">
                 <Button nome="Ver Todos Os Produtos" largura="220px" altura="50px" />
               </div>
 
@@ -144,10 +169,29 @@ export default function Home() {
             </div>
 
 
-
           </div>
 
-
+          <div className="flex flex-col gap-5">
+            <ColorTextSection text="Today's" />
+          {/* <div className="flex gap-3 items-center">
+            <div className="w-5 h-9 bg-red-500 rounded-[5px]"></div>
+            <p className="text-red-500">Categories</p>
+          </div> */}
+          <div>
+            <div className="flex mb-[31px]">
+              <TitleSection text="Browse By Categories" />
+              {/* <h2 className="font-poppins font-semibold text-[36px] mb-5">Browse By Categories</h2> */}
+              <div>
+                <ArrowButton />
+              </div>
+            </div>
+            <div className="flex">
+              <CtgCard icon={iconCelular} nome="okoko" />
+              <CtgCard icon={iconCelular} nome="okoko" />
+              <CtgCard icon={iconCelular} nome="okoko" />
+            </div>
+          </div>
+        </div>
 
 
         </div>

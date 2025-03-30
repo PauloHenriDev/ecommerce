@@ -1,10 +1,10 @@
-export default function Card({ img, nome, valor, valorAntigo, estrelas }) {
+export default function Card({ img, nome, valor, valorAntigo, estrelas, reviews }) {
     return (
         <div className="flex flex-col w-fit h-fit gap-4 cursor-pointer">
             {/* Apliquei a classe 'group' aqui no contêiner da imagem */}
             <div className="relative flex bg-[#F5F5F5] rounded-[3px] group">
                 {/* Imagem do produto */}
-                {img && <img src={img} alt="Imagem do produto" width={215} height={200} />}
+                {img && <img src={img} alt="Imagem do produto" className="object-cover" width={215} height={200} />}
 
                 {/* Ícones que aparecem ao passar o mouse */}
                 <div className="absolute left-42 top-2 flex opacity-0 group-hover:opacity-100">
@@ -25,14 +25,18 @@ export default function Card({ img, nome, valor, valorAntigo, estrelas }) {
                 </div>
             </div>
 
-            {/* Informações do card */}
+
+            {/* Card Informations */}
             <div className="flex flex-col gap-1 text-[16px]">
                 <p>{nome}</p>
                 <div className="flex gap-3">
                     <p className="text-green-800">{valor}</p>
                     <p className="text-red-800 line-through">{valorAntigo}</p>
                 </div>
-                <p>{estrelas}</p>
+                <div className="flex gap-[8px]">
+                    <p>{estrelas}</p>
+                    <p>{reviews}</p>
+                </div>
             </div>
         </div>
     );
