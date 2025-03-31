@@ -14,7 +14,6 @@ import Clock from "./components/Clock/Clock";
 import CtgCard from "./components/CtgCard/CtgCard";
 import ArrowButton from "./components/ArrowButton/ArrowButton";
 
-import iconBigImage from "../app/assets/img/big_image.png";
 import imgControle from '../app/assets/img/controle.png';
 import iconCelular from '../app/assets/img/Category-CellPhone.jpg';
 import iconSeta from '../app/assets/img/seta.png';
@@ -227,7 +226,7 @@ const handleScroll = (direction) => {
               </div>
             </div>
             <div className="absolute top-[375px] left-[56px]">
-              <Button texto="Compre Agora!" altura="56px" largura="171px" />
+              <Button texto="Compre Agora!" altura="56px" largura="171px" cor="yellow" />
             </div>
           </div>
 
