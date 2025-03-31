@@ -189,7 +189,7 @@ const handleScroll = (direction) => {
 
           <div>
             <ColorTextSection texto="This Month" />
-            <div className="mt-[20px] flex justify-between">
+            <div className="mt-[20px] mb-[31px] flex justify-between">
               <TitleSection texto="Best Selling Products" />
               <Button texto="Ver Tudo" largura="159px" altura="56px" />
             </div>
@@ -206,6 +206,30 @@ const handleScroll = (direction) => {
             </div>
           </div>
 
+          <div className="relative mt-[140px]">
+            <Image src={red} className="w-[1170px] h-[500px]" />
+            <div className="absolute top-[273px] left-[56px] flex gap-[24px]">
+              <div className="flex flex-col bg-white rounded-[30px] w-[62px] h-[62px] items-center justify-center">
+                <p className="text-[16px]">0</p>
+                <p className="text-[11px]">Hours</p>
+              </div>
+              <div className="flex flex-col bg-white rounded-[30px] w-[62px] h-[62px] items-center justify-center">
+                <p className="text-[16px]">0</p>
+                <p className="text-[11px]">Days</p>
+              </div>
+              <div className="flex flex-col bg-white rounded-[30px] w-[62px] h-[62px] items-center justify-center">
+                <p className="text-[16px]">0</p>
+                <p className="text-[11px]">Minutes</p>
+              </div>
+              <div className="flex flex-col bg-white rounded-[30px] w-[62px] h-[62px] items-center justify-center">
+                <p className="text-[16px]">0</p>
+                <p className="text-[11px]">Seconds</p>
+              </div>
+            </div>
+            <div className="absolute top-[375px] left-[56px]">
+              <Button texto="Compre Agora!" altura="56px" largura="171px" />
+            </div>
+          </div>
 
           {/* Body */}
         </div>
